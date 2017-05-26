@@ -1,0 +1,67 @@
+
+.row {
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    border: 1px solid dimgrey;
+    padding: 0px;
+
+}
+
+.col-sm-6 {
+        padding: 0px;
+    }
+
+.header {
+    border: 1px solid dimgrey;
+    height: 20vh;
+}
+
+.weekday {
+    border: 1px solid dimgrey;
+    width: 33.3333%;
+    padding-top: 16.665%;
+    float: left;
+    position: relative;
+}
+h1 {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    font-size: 20px;
+}
+h4 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 14px;
+}
+
+.hourContainer {
+    width: 50%;
+    border: 1px solid dimgrey;
+    float: left;
+    margin: 0px;
+}
+
+.hour {
+    border: 1px solid dimgrey;
+    width: 16.666%;
+    padding-top: 16.666%;
+    float: left;
+    position: relative;
+}
+#allHours {
+    width: 100%;
+    overflow-x: auto;
+}
+#overflowHours {
+    width: auto;
+}
+#hourContainerLeft {
+    float: left;
+}
+
+
