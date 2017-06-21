@@ -1,69 +1,3 @@
-p {
-    text-align: center;
-    position: relative;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.row {
-    padding: 0px;
-    margin: 0px;
-}
-
-.container {
-    /*border: 1px solid dimgrey;*/
-    padding: 0px 5vw;
-
-}
-
-.col-sm-6 {
-    padding: 0px;
-}
-.col-sm-12 {
-    padding: 0px;
-}
-
-#boxShadow {
-    /*border-bottom: 1px solid dimgrey;*/
-    /*box-shadow: 0px 2px 5px #888888;*/
-    z-index: 100000;
-    border-bottom: 1px solid dimgrey;
-}
-
-.header {
-    /*border: 1px solid dimgrey;*/
-    height: 20vh;
-}
-#date {
-    width: 50%;
-    float: left;
-    /*position: relative;*/
-    /*border: 1px solid dimgrey;*/
-    height: 100%;
-    font-size: 30px;
-}
-#prof {
-    width: 50%;
-    float: left;
-    /*position: relative;*/
-    /*border: 1px solid dimgrey;*/
-    height: 100%;
-}
-/*#weekdaysContainer {
-    box-shadow: 0px 3px 10px #888888;
-}*/
-
-.weekday {
-    /*border: 1px solid dimgrey;*/
-    width: 33.3333%;
-    padding-top: 16.665%;
-    float: left;
-    position: relative;
-    background-color: white;
-    border: none;
-}
 h1 {
     position: absolute;
     top: 0%;
@@ -71,6 +5,7 @@ h1 {
     font-size: 20px;
     color: rgba(199,204,207,0.95)
 }
+
 h4 {
     position: absolute;
     top: 10%;
@@ -78,40 +13,87 @@ h4 {
     font-size: 14px;
     color: rgba(199,204,207,0.95)
 }
+.row {
+    width: 100%;
+}
 
-.hourContainer {
-    width: 50%;
+
+.container {
     /*border: 1px solid dimgrey;*/
-    float: left;
+    padding: 0px 10vw;
+    height: 100vh;
+
+}
+
+.row {
+    padding: 0px;
     margin: 0px;
 }
 
+.col-sm-6 {
+    padding: 0px;
+}
+
+.col-sm-12 {
+    padding: 0px;
+}
+
+#header {
+    border-left: 1px solid #E0E1E1;
+    border-top: 1px solid #E0E1E1;
+    border-right: 1px solid #E0E1E1;
+    height: 20%;
+    width: 100%;
+}
+
+#weekdaysContainer {
+    width: 100%;
+}
+
+.weekBtn {
+    float: left;
+    width: 5%;
+    padding-top: 6%;
+    position: relative;
+    border-left: 1px solid #E0E1E1;
+    border-bottom: 1px solid #E0E1E1;
+    border-top: 1px solid #E0E1E1;
+}
+
+
+.weekday {
+    width: 18%;
+    padding-top: 6%;
+    float: left;
+    position: relative;
+    border-left: 1px solid #E0E1E1;
+    border-top: 1px solid #E0E1E1;
+    border-bottom: 1px solid #E0E1E1;
+}
+
+#hourContainer {
+    height: 60%;
+    overflow-y: auto;
+
+}
+
+
+
 .hour {
-    /*border: 1px solid dimgrey;*/
-    width: 16.666%;
-    padding-top: 16.666%;
+    width: 25%;
+    padding-top: 6.25%;
     float: left;
     position: relative;
     background-color: white;
-    z-index: 10000;
-}
-/*.hour:hover {
-    background-color: rgba(231,236,239,0.95);
-}*/
-#allHours {
-    width: 100%;
-    overflow-x: auto;
-    z-index: 1000;
-}
-#overflowHours {
-    width: auto;
-}
-#hourContainerLeft {
-    float: left;
+    border-bottom: 1px solid #E0E1E1;
+    border-left: 1px solid #E0E1E1;
 }
 
 #bottomContainer {
-    height: 15vh;
+    height: 10%;
+}
+#bottomContainer2 {
+    height: 100%;
 }
 
 #comment {
@@ -123,6 +105,7 @@ h4 {
     width: 50%;
     height: 100%;
     float: left;
+    position: relative;
     /*border: 1px solid dimgrey;*/
     background-color: rgba(110,170,121,0.95);
     text-align: center;
@@ -131,11 +114,3 @@ h4 {
 #acceptBtn:hover {
     opacity: 0.8;
 }
-
-#nine {
-    background-color: rgb(189, 52, 42);
-}
-
-
-
-

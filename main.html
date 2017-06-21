@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bootstrap Example</title>
+    <title>Sprechstundenbuchung</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -11,297 +11,225 @@
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <div id="container" class="container">
-    <div id="boxShadow">
-    <div class="row">
-        <div class="col-sm-12 header">
-            <div id="date">
-                <p>17<br>MÄRZ</p>
-            </div>
-            <div id="prof">
-                HEADER
-            </div>
+    <div id="header" class="row">
+        <div id="" class="col-sm-12">
+
         </div>
     </div>
-
-    <div id="weekdaysContainer" class="row">
-        <div class="col-sm-6">
-            <div id="monday" class="weekday">
+    <div class="row">
+        <div id="weekdaysContainer">
+            <div id="btnLeft" class="weekBtn">
+                <h1>L</h1>
+            </div>
+            <div id="montag" class="weekday">
                 <h1>MO</h1>
             </div>
-            <div class="weekday">
+            <div id="dienstag" class="weekday">
                 <h1>DI</h1>
             </div>
-            <div class="weekday">
+            <div id="mittwoch" class="weekday">
                 <h1>MI</h1>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="weekday">
+            <div id="donnerstag" class="weekday">
                 <h1>DO</h1>
             </div>
-            <div class="weekday">
+            <div id="freitag" class="weekday">
                 <h1>FR</h1>
             </div>
-            <div class="weekday">
-                <h1>SA</h1>
+            <div id="btnRight" class="weekBtn">
+                <h1>R</h1>
             </div>
         </div>
     </div>
-    </div>
-    <div id="allHours" class="row">
-        <div id="overflowHours">
-            <div id="hourContainerLeft" class="hourContainer">
-                <div class="row">
-                    <div id="eight" class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div id="nine" class="hour">
-                        <h4>9:00</h4>
-                    </div>
-                    <div id="10h" class="hour">
-                        <h4>10:00</h4>
-                    </div>
-                    <div id="11h" class="hour">
-                        <h4>11:00</h4>
-                    </div>
-                    <div id="12h" class="hour">
-                        <h4>12:00</h4>
-                    </div>
-                    <div id="13h" class="hour">
-                        <h4>13:00</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="815h" class="hour">
-                        <h4>8:15</h4>
-                    </div>
-                    <div id="915h" class="hour">
-                        <h4>9:15</h4>
-                    </div>
-                    <div id="1015h" class="hour">
-                        <h4>10:15</h4>
-                    </div>
-                    <div id="1115h" class="hour">
-                        <h4>11:15</h4>
-                    </div>
-                    <div id="1215h" class="hour">
-                        <h4>12:15</h4>
-                    </div>
-                    <div id="1315h" class="hour">
-                        <h4>13:15</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="hour">
-                        <h4>8:30</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>9:30</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>10:30</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>11:30</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>12:30</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>13:30</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="hour">
-                        <h4>8:45</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>9:45</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>10:45</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>11:45</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>12:45</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>13:45</h4>
-                    </div>
-                </div>
-            </div>
+    <div id="hourContainer" class="row">
+        <div id="overflowHelpContainer">
 
-            <div id="hourContainerRight" class="hourContainer">
-                <div class="row">
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>8</h4>
                 </div>
-                <div class="row">
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
+                <div class="hour">
+                    <h4>15</h4>
                 </div>
-                <div class="row">
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
+                <div class="hour">
+                    <h4>30</h4>
                 </div>
-                <div class="row">
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
-                    <div class="hour">
-                        <h4>8:00</h4>
-                    </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>9</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>10</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>11</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>12</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>13</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>14</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>16</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>17</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>18</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
+                </div>
+            </div>
+            <div class="row hourRow">
+                <div class="hour">
+                    <h4>19</h4>
+                </div>
+                <div class="hour">
+                    <h4>15</h4>
+                </div>
+                <div class="hour">
+                    <h4>30</h4>
+                </div>
+                <div class="hour">
+                    <h4>45</h4>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-            <div id="bottomContainer" class="col-sm-12">
-                <div id="comment">
-                    <p>COMMENT</p>
-                </div>
-                <div id="acceptBtn">
-                 <p>ACCEPT</p>
-                </div>
+    <div id="bottomContainer" class="row">
+        <div id="bottomContainer2" class="col-sm-12">
+            <div id="comment">
+                <p>COMMENT</p>
+            </div>
+            <div id="acceptBtn">
+                <h1>ACCEPT</h1>
             </div>
         </div>
     </div>
 </div>
-<script>
-    var profMustermann = [
-        {tag: "Montag", eight: false, nine: false, ten: true, eleven: true}
-        ];
-
-    console.log(profMustermann.length);
 
 
-    function clickDay() {
-        var weekday = document.getElementsByClassName("weekday");
-        for (var i = 0; i < weekday.length; i++) {
-            weekday[i].addEventListener("click", function () {
-                if (getComputedStyle(this).backgroundColor === "rgb(255, 255, 255)") {
-                    this.style.backgroundColor = "steelblue";
+</div>
 
-                    for(var i = 0; i < profMustermann.length; i++) {
-
-                    }
-
-                } else {
-                    this.style.backgroundColor = "white";
-                }
-            });
-        }
-    }
-    clickDay();
-
-
-
-    //Auswahl von Stunden
-    function clickHour() {
-        var hour = document.getElementsByClassName("hour");
-        for (var i = 0; i < hour.length; i++) {
-            hour[i].addEventListener("click", function () {
-                if (getComputedStyle(this).backgroundColor == "rgb(189, 52, 42)") {
-                    console.log("rot");
-                } else if (getComputedStyle(this).backgroundColor === "rgb(255, 255, 255)") {
-                    this.style.backgroundColor = "steelblue";
-
-                } else {
-                    this.style.backgroundColor = "white";
-                }
-            });
-        }
-    }
-    clickHour();
-
-
-    function checkDevice() {
-        if (window.matchMedia('(min-width: 0px) and (max-width: 480px)').matches) {
-
-            //Stunden-Container vergrößern für Scrolleffekt
-            var allHours = document.getElementById("overflowHours");
-            allHours.style.width = "200%";
-
-            //Seitenabstände auf Null setzen
-            var container = document.getElementById("container");
-            container.style.padding = "0px";
-
-            //Kommentar Textfeld entfernen und Breite des Button auf 66.666%
-            var comment = document.getElementById("comment");
-            comment.parentNode.removeChild(comment);
-            var acceptBtn = document.getElementById("acceptBtn");
-            acceptBtn.style.width = "66.666%";
-            acceptBtn.style.float = "right";
-        }
-    }
-    checkDevice();
-
-
-</script>
 
 </body>
 </html>
