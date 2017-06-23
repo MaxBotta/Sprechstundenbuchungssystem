@@ -13,42 +13,65 @@
 <body>
 <div id="container" class="container">
     <div id="header" class="row">
-        <div id="" class="col-sm-12">
-            <div id="linksBtn" class="btn">
-            </div>
-            <div id="rechtsBtn" class="btn">
-            </div>
+        <!--<div id="dropButton" class="form-group">-->
+            <!--<select class="form-control dropButtonAuswahl" id="sel1">-->
+                <!--<option>Prof. Dr. Westbomke</option>-->
+                <!--<option>Prof. Dr. Eckert</option>-->
+                <!--<option>Prof. Dr. Thies</option>-->
+                <!--<option>Prof. Dr. Erich</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <div id="dropButton" class="dropdown">
+            <button  id="dropdownButton" class="btn dropdown-toggle" type="button" data-toggle="dropdown">Professoren
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Prof. Dr. Eckert</a></li>
+                <li><a href="#">Prof. Dr. Westbomke</a></li>
+                <li><a href="#">Prof. Dr. Thies</a></li>
+                <li><a href="#">Prof. Dr. Eckert</a></li>
+                <li><a href="#">Prof. Dr. Westbomke</a></li>
+                <li><a href="#">Prof. Dr. Thies</a></li>
+                <li><a href="#">Prof. Dr. Eckert</a></li>
+                <li><a href="#">Prof. Dr. Westbomke</a></li>
+                <li><a href="#">Prof. Dr. Thies</a></li>
+                <li><a href="#">Prof. Dr. Eckert</a></li>
+                <li><a href="#">Prof. Dr. Westbomke</a></li>
+                <li><a href="#">Prof. Dr. Thies</a></li>
+            </ul>
+        </div>
+        <div id="logoContainer">
+            <img src="pics/logo.jpg">
         </div>
     </div>
     <div id="weekdays" class="row">
-        <div id="links" class="col-sm-1 weekdayBtn">
+        <div id="links" class="weekdayBtn">
             <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
         </div>
-        <div id="montag" class="col-sm-2 align-middle weekday">
-            <h1>MO</h1>
-        </div>
-        <div id="dienstag" class="col-sm-2 weekday">
-            <div>
+        <div id="weekdayContainer" class="">
+            <div id="montag" class=" weekday">
+                <h1>MO</h1>
+            </div>
+            <div id="dienstag" class=" weekday">
                 <h1>DI</h1>
             </div>
+            <div id="mittwoch" class=" weekday">
+                <h1>MI</h1>
+            </div>
+            <div id="donnerstag" class=" weekday">
+                <h1>DO</h1>
+            </div>
+            <div id="freitag" class=" weekday">
+                <h1>FR</h1>
+            </div>
         </div>
-        <div id="mittwoch" class="col-sm-2 weekday">
-            <h1>MI</h1>
-        </div>
-        <div id="donnerstag" class="col-sm-2 weekday">
-            <h1>DO</h1>
-        </div>
-        <div id="freitag" class="col-sm-2 weekday">
-            <h1>FR</h1>
-        </div>
-        <div id="rechts" class="col-sm-1 weekdayBtn">
+        <div id="rechts" class="weekdayBtn">
             <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
         </div>
     </div>
 
-    <div class="row allHourContainer">
-        <div class="overflowHelpContainer">
 
+    <div id="allHourContainer" class="row">
+        <div id="overflowHelpContainer">
             <div class="row hourRow">
                 <div class="col-sm-3 hourContainer">
                     <div class="align-top hour">
@@ -271,28 +294,31 @@
             </div>
         </div>
     </div>
+    <div id="bottomContainer" class="row">
+            <div id="back">
+                <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+            </div>
+            <div id="acceptBtn">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </div>
+            <div id="cancelBtn">
+
+            </div>
+        </div>
+    </div>
 </div>
 
 
-<!--<div id="bottomContainer" class="row">-->
-<!--<div id="bottomContainer2" class="col-sm-12">-->
-<!--<div id="comment">-->
-<!--<p>COMMENT</p>-->
-<!--</div>-->
-<!--<div id="acceptBtn">-->
-<!--<h1>ACCEPT</h1>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
+
 
 <script>
     function clickDay() {
         var weekday = document.getElementsByClassName("weekday");
-        var montag  = document.getElementById("montag");
-        var dienstag  = document.getElementById("dienstag");
-        var mittwoch  = document.getElementById("mittwoch");
-        var donnerstag  = document.getElementById("donnerstag");
-        var freitag  = document.getElementById("freitag");
+        var montag = document.getElementById("montag");
+        var dienstag = document.getElementById("dienstag");
+        var mittwoch = document.getElementById("mittwoch");
+        var donnerstag = document.getElementById("donnerstag");
+        var freitag = document.getElementById("freitag");
 
         for (var i = 0; i < weekday.length; i++) {
             weekday[i].addEventListener("click", function () {
@@ -310,7 +336,8 @@
                     freitag.style.borderLeft = "5px solid white";
 
                     this.style.backgroundColor = "#e8ecef";
-                    this.style.borderLeft = "5px solid red";
+                    this.style.borderLeft = "5px solid rgb(226, 34, 70)";
+                    this.style.borderRadius = "10px";
                 }
             });
         }
@@ -377,6 +404,49 @@
     //addHours("mittwochContainer");
     //addHours("donnerstagContainer");
     //addHours("freitagContainer");
+
+    function checkDevice() {
+        if (window.matchMedia('(min-width: 0px) and (max-width: 500px)').matches) {
+
+            var hourRow = document.getElementsByClassName("hourRow");
+            var hourContainer = document.getElementsByClassName("hourContainer");
+            var hour = document.getElementsByClassName("hour");
+
+            var logoContainer = document.getElementById("logoContainer");
+            var dropButton = document.getElementById("dropButton");
+
+            var overflowHelpContainer = document.getElementById("overflowHelpContainer");
+            overflowHelpContainer.style.height = "1000%";
+
+            var montag = document.getElementById("montag");
+            var dienstag = document.getElementById("dienstag");
+            var mittwoch = document.getElementById("mittwoch");
+            var donnerstag = document.getElementById("donnerstag");
+            var freitag = document.getElementById("freitag");
+
+            montag.style.width = "100%";
+            montag.style.textAlign = "center";
+
+            logoContainer.parentNode.removeChild(logoContainer);
+            dropButton.style.width = "100%";
+
+            dienstag.parentNode.removeChild(dienstag);
+            mittwoch.parentNode.removeChild(mittwoch);
+            donnerstag.parentNode.removeChild(donnerstag);
+            freitag.parentNode.removeChild(freitag);
+
+            for (var i = 0; i < hourContainer.length; i++) {
+                hourContainer[i].style.height = "25%";
+            }
+
+            for (var i = 0; i < hourRow.length; i++) {
+                hourRow[i].style.height = "10%";
+
+            }
+
+        }
+    }
+    checkDevice();
 </script>
 
 </body>

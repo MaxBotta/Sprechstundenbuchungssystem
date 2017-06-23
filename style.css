@@ -2,19 +2,38 @@ body {
                 background-color: rgba(231,236,239,0.95);
             }
 
-h1 {
+.bootstrap-select .btn:focus {
+    outline: none !important;
+}
 
-    color: rgba(141,83,82,0.95)
+h1 {
+    margin: 0px 2px;
+    font-size: 8vh;
+    color: rgba(91,92,91,0.95);
 }
 
 h2 {
-    margin: 3px;
-    color: rgba(199,204,207,0.95)
+    margin: 0px 2px;
+    padding: 0px;
+    color: rgba(91,92,91,0.95);
 }
 
 h4 {
+    margin: 0px 2px;
+    padding: 0px;
     color: rgba(199,204,207,0.95)
 }
+
+h6 {
+    margin: 0px 0px;
+    padding: 0px;
+    color: rgba(199,204,207,0.95)
+}
+
+img {
+    width: 100%;
+}
+
 
 .container {
     /*border: 1px solid dimgrey;*/
@@ -29,73 +48,163 @@ h4 {
     margin: 0px;
 }
 
+.col-xs-1 {
+    margin: 0px;
+    padding: 0px;
+}
+.col-xs-10 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.col-xs-2 {
+    margin: 0px;
+    padding: 0px;
+}
+.col-xs-8 {
+    margin: 0px;
+    padding: 0px;
+}
+
 .col-sm-2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.col-sm-3 {
+    margin: 0px;
     padding: 0px;
 }
 
 .col-sm-6 {
+    margin: 0px;
     padding: 0px;
 }
 
 .col-sm-12 {
+    margin: 0px;
     padding: 0px;
 }
 
 #header {
-    border-left: 1px solid #E0E1E1;
-    border-top: 1px solid #E0E1E1;
-    border-right: 1px solid #E0E1E1;
-    height: 20%;
+    margin-top: 5px;
+    width: 100%;
+    height: 15%;
+}
+.form-group {
+    border-radius: 0;
+}
+.form-control {
+    border-radius: 0;
+}
+
+#dropButton {
+    width: 50%;
+}
+.dropdown {
+    width: 50%;
 }
 .btn {
     width: 100%;
+    border-radius: 0px;
+    background-color: rgba(231,236,239,0.95);
+    border: 0px;
 }
+
+.dropdownButton {
+    width: 100%;
+    border-radius: 0;
+    float: left;
+    border: 0px;
+    box-shadow: none;
+    background-color: rgba(231,236,239,0.95);
+}
+
+.dropdown-menu {
+    width: 100%;
+    border-radius: 0;
+    float: left;
+    border: 0px;
+    box-shadow: none;
+    background-color: rgba(231,236,239,0.95);
+}
+
+
+#logoContainer {
+    width: 10%;
+    height: 100%;
+    float: right;
+}
+
 
 #weekdays {
     height: 10%;
+    width: 100%;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
+#weekdayContainer {
+    float: left;
+    height: 100%;
+    width: 80%;
+}
+
 .weekday {
     height: 100%;
-    text-align: center;
+    width: 20%;
+    float: left;
     background-color: white;
     border-left: 5px solid white;
+    border-radius: 10px;
 }
 
 #dienstag {
     background-color: rgba(231,236,239,0.95);
-    border-left: 5px solid red;
+    border-left: 5px solid rgb(226, 34, 70);
 }
 
 .weekdayBtn {
     height: 100%;
+    width: 10%;
+    float: left;
     text-align: center;
     padding-top: 1%;
 }
 
 span.glyphicon-menu-right {
     font-size: 3em;
+    color: rgba(91,92,91,0.95);
 }
 
 span.glyphicon-menu-left {
     font-size: 3em;
+    color: rgba(91,92,91,0.95);
+}
+span.glyphicon-triangle-left {
+    font-size: 3em;
+    color: rgba(91,92,91,0.95);
 }
 
-.allHourContainer {
+#allHourContainer {
     height: 60%;
     overflow-y: auto;
-    border-left: 5px solid red;
+    border-radius: 10px;
+    border-left: 5px solid rgb(226, 34, 70);
     /*border: 1px solid black;*/
 }
-.overflowHelpContainer {
+
+#overflowHelpContainer {
     background-color: rgba(231,236,239,0.95);
-    height: 100%;
+    height: 200%;
+    border-radius: 10px;
 }
+
 .hourRow {
-    height: 9.99%;
+    height: 10%;
     width: 100%;
     /*border: 1px solid black;*/
 }
+
 .hourContainer {
     height: 100%;
     padding: 0px 0px;
@@ -105,34 +214,88 @@ span.glyphicon-menu-left {
     width: 100%;
     height: 100%;
     background-color: white;
-    border: 1px solid #E0E1E1;
+    border: 1px solid rgba(231,236,239,0.95);
     /*border-left: 1px solid #E0E1E1;*/
     opacity: 0.9;
-
 }
 
 #bottomContainer {
     height: 10%;
-}
-#bottomContainer2 {
-    height: 100%;
+    margin-top: 1%;
 }
 
-#comment {
-    width: 50%;
+#back {
+    width: 33%;
     height: 100%;
     float: left;
+    border-radius: 10px;
+    text-align: center;
 }
+
 #acceptBtn {
-    width: 50%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
     float: left;
-    position: relative;
+    margin-left: 50px;
     /*border: 1px solid dimgrey;*/
     background-color: rgba(110,170,121,0.95);
     text-align: center;
     color: white;
+    border-radius: 100%;
 }
+#cancelBtn {
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-right: 10px;
+    /*border: 1px solid dimgrey;*/
+    background-color: rgba(110,170,121,0.95);
+    text-align: center;
+    color: white;
+    border-radius: 100%;
+}
+
 #acceptBtn:hover {
     opacity: 0.8;
+}
+
+@media (max-width: 500px) {
+    .container {
+        margin: 0px;
+        padding: 0px;
+    }
+    #header {
+        height: 10%;
+        margin: 0px;
+    }
+    #dropButton {
+        margin: 0px;
+    }
+    #weekdays {
+        height: 20% ;
+    }
+    #weekdayContainer {
+        width: 70%;
+    }
+    .weekdayBtn {
+        width: 15%;
+    }
+    h1 {
+        font-size: 70px;
+        margin-top: 5%;
+    }
+    #allHourContainer {
+        height: 50%;
+    }
+    span.glyphicon-menu-right {
+        margin-top: 80%;
+        font-size: 2em;
+        color: rgba(91,92,91,0.95);
+    }
+
+    span.glyphicon-menu-left {
+        margin-top: 80%;
+        font-size: 2em;
+        color: rgba(91,92,91,0.95);
+    }
 }
