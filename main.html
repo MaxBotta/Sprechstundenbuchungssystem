@@ -329,18 +329,23 @@
     };
 
 
-    function fillHours() {
+    //Diese Methode befüllt die Stunden anhand eines übergebenen Arrays
+    function fillHours(array) {
         var hours = document.getElementsByClassName("hour");
         for (var i = 0; i < hours.length; i++) {
             var hourId = hours[i].getAttribute("id");
 
-            if (zeitenEckert[hourId] === true) {
+            //Erst alle weiß färben
+            hours[i].style.backgroundColor = "rgb(255,255,255)";
+
+            //Jetzt werden die belegten Stunden grau gefärbt
+            if (array[hourId] === true) {
                 hours[i].style.backgroundColor = "#e8ecef";
             }
 
         }
     }
-    fillHours();
+    fillHours(zeitenEckert);
 
 
     function clickDay() {

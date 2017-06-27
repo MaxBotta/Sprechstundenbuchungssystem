@@ -155,7 +155,7 @@ img {
     float: left;
     background-color: white;
     border-left: 5px solid white;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
 }
 
 #dienstag {
@@ -184,12 +184,20 @@ span.glyphicon-triangle-left {
     font-size: 3em;
     color: rgba(91,92,91,0.95);
 }
+span.glyphicon-plus {
+    margin-top: 10%;
+    font-size: 2em;
+}
+span.glyphicon-minus {
+    margin-top: 10%;
+    font-size: 2em;
+}
 
 #allHourContainer {
     height: 60%;
     overflow-y: auto;
-    border-radius: 10px;
-    border-left: 5px solid rgb(226, 34, 70);
+    /*border-radius: 10px;*/
+    border-left: 5px solid rgba(189,84,68,0.95);
     /*border: 1px solid black;*/
 }
 
@@ -202,8 +210,11 @@ span.glyphicon-triangle-left {
 .hourRow {
     height: 10%;
     width: 100%;
+    /*border-bottom: 1px solid rgba(231,236,239,0.95);
     /*border: 1px solid black;*/
 }
+
+
 
 .hourContainer {
     height: 100%;
@@ -219,13 +230,14 @@ span.glyphicon-triangle-left {
     opacity: 0.9;
 }
 
+
 #bottomContainer {
     height: 10%;
     margin-top: 1%;
 }
 
 #back {
-    width: 33%;
+    width: 33.333%;
     height: 100%;
     float: left;
     border-radius: 10px;
@@ -233,26 +245,26 @@ span.glyphicon-triangle-left {
 }
 
 #acceptBtn {
-    width: 50px;
+    width: 33.333%;
     height: 50px;
     float: left;
-    margin-left: 50px;
     /*border: 1px solid dimgrey;*/
-    background-color: rgba(110,170,121,0.95);
+    background-color: rgba(146,189,128,0.95);
     text-align: center;
     color: white;
-    border-radius: 100%;
+
+
 }
 #cancelBtn {
-    width: 50px;
+    width: 33.333%;
     height: 50px;
     float: right;
-    margin-right: 10px;
     /*border: 1px solid dimgrey;*/
-    background-color: rgba(110,170,121,0.95);
+    background-color: rgba(189,84,68,0.95);
     text-align: center;
     color: white;
-    border-radius: 100%;
+
+
 }
 
 #acceptBtn:hover {
@@ -286,6 +298,14 @@ span.glyphicon-triangle-left {
     }
     #allHourContainer {
         height: 50%;
+    }
+    #overflowHelpContainer {
+        height: 200%;
+    }
+    .hourContainer {
+        width: 25%;
+        height: 100%;
+        float: left;
     }
     span.glyphicon-menu-right {
         margin-top: 80%;
