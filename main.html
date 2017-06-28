@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="JQuery/jquery-3.2.1.js"></script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="zeiten.js"></script>
+    <script src="funktionen.js"></script>
 </head>
 <body>
 <div id="container" class="container">
@@ -309,171 +311,107 @@
     </div>
 </div>
 
-
-
-
 <script>
-
-    var zeitenEckert = {
-        "eight": true, "eightFifteen": true, "eightThirty": false, "eightFortyfive": true,
-        "nine" : true, "nineFifteen": true, "nineThirty": true, "nineFortyfive": true,
-        "ten" : false, "tenFifteen": true, "tenThirty": true, "tenFortyfive": true,
-        "eleven" : true, "elevenFifteen": true, "elevenThirty": true, "elevenFortyfive": true,
-        "twelve" : false, "twelveFifteen": false, "twelveThirty": true, "twelveFortyfive": true,
-        "thirteen" : false, "thirteenFifteen": false, "thirteenThirty": true, "thirteenFortyfive": true,
-        "fourteen" : true, "fourteenFifteen": true, "fourteenThirty": true, "fourteenFortyfive": true,
-        "fifteen" : true, "fifteenFifteen": false, "fifteenThirty": false, "fifteenFortyfive": true,
-        "sixteen" : false, "sixteenFifteen": true, "sixteenThirty": true, "sixteenFortyfive": true,
-        "seventeen" : true, "seventeenFifteen": true, "seventeenThirty": true, "seventeenFortyfive": true,
-        "eighteen" : true, "eighteenFifteen": true, "eighteenThirty": true, "eighteenFortyfive": true,
-    };
-
-
-    //Diese Methode befüllt die Stunden anhand eines übergebenen Arrays
-    function fillHours(array) {
-        var hours = document.getElementsByClassName("hour");
-        for (var i = 0; i < hours.length; i++) {
-            var hourId = hours[i].getAttribute("id");
-
-            //Erst alle weiß färben
-            hours[i].style.backgroundColor = "rgb(255,255,255)";
-
-            //Jetzt werden die belegten Stunden grau gefärbt
-            if (array[hourId] === true) {
-                hours[i].style.backgroundColor = "#e8ecef";
-            }
-
-        }
-    }
-    fillHours(zeitenEckert);
-
-
-    function clickDay() {
-        var weekday = document.getElementsByClassName("weekday");
-        var montag = document.getElementById("montag");
-        var dienstag = document.getElementById("dienstag");
-        var mittwoch = document.getElementById("mittwoch");
-        var donnerstag = document.getElementById("donnerstag");
-        var freitag = document.getElementById("freitag");
-
-        for (var i = 0; i < weekday.length; i++) {
-            weekday[i].addEventListener("click", function () {
-
-                if (getComputedStyle(this).backgroundColor === "rgb(255, 255, 255)") {
-                    montag.style.backgroundColor = "white";
-                    montag.style.borderLeft = "5px solid white";
-                    dienstag.style.backgroundColor = "white";
-                    dienstag.style.borderLeft = "5px solid white";
-                    mittwoch.style.backgroundColor = "white";
-                    mittwoch.style.borderLeft = "5px solid white";
-                    donnerstag.style.backgroundColor = "white";
-                    donnerstag.style.borderLeft = "5px solid white";
-                    freitag.style.backgroundColor = "white";
-                    freitag.style.borderLeft = "5px solid white";
-
-                    this.style.backgroundColor = "#e8ecef";
-                    this.style.borderLeft = "5px solid rgb(226, 34, 70)";
-                    //this.style.borderRadius = "10px";
-                }
-            });
-        }
-    }
+    fillHours(montag);
     clickDay();
-
-    //Auswahl von Stunden
-    function clickHour() {
-        var hour = document.getElementsByClassName("hour");
-        for (var i = 0; i < hour.length; i++) {
-            hour[i].addEventListener("click", function () {
-
-                //Falls weiß dann ändere in grün
-                if (getComputedStyle(this).backgroundColor === "rgb(255, 255, 255)") {
-                    this.style.backgroundColor = "rgb(151, 192, 134)";
-
-                    //Falls grün dann ändere in weiß
-                    } else if (getComputedStyle(this).backgroundColor === "rgb(151, 192, 134)"){
-                        this.style.backgroundColor = "rgb(255, 255, 255)";
-                }
-            });
-        }
-    }
-    clickHour();
-
-    //Diese Methode füllt die Wochentage mit Stunden
-    function addHours(id) {
-        var container = document.getElementById(id);
-
-        var hourContainer = document.createElement("div");
-        hourContainer.setAttribute("class", "row hourContainer");
-        container.appendChild(hourContainer);
-
-        var overflowHelpContainer = document.createElement("div");
-        overflowHelpContainer.setAttribute("class", "overflowHelpContainer");
-        hourContainer.appendChild(overflowHelpContainer);
-
-        for (var i = 8; i < 18; i++) {
-            var hourRow = document.createElement("div");
-            hourRow.setAttribute("class", "row hourRow");
-            overflowHelpContainer.appendChild(hourRow);
-
-            //Anmerkung: Aus irgendeinem Grund lies sich das hinzufügen der Stunden
-            //nicht als Schleife ausführen, weshalb ich eine Funktion geschrieben habe.
-            //Sollte man evt. nochmals überprüfen.
-            function addMinutes(text) {
-                var hour = document.createElement("div");
-                hour.setAttribute("class", "hour");
-                hourRow.appendChild(hour);
-
-                var h1 = document.createElement("H4");
-                var t = document.createTextNode(text);
-                h1.appendChild(t);
-                hour.appendChild(h1);
-            }
-
-            addMinutes(i.toString());
-            addMinutes("15");
-            addMinutes("30");
-            addMinutes("45");
-        }
-
-    }
+    clickHour2();
+    checkDevice();
     //addHours("dienstagContainer");
     //addHours("mittwochContainer");
     //addHours("donnerstagContainer");
     //addHours("freitagContainer");
 
-    function checkDevice() {
-        if (window.matchMedia('(min-width: 0px) and (max-width: 500px)').matches) {
-
-            var hourRow = document.getElementsByClassName("hourRow");
-            var hourContainer = document.getElementsByClassName("hourContainer");
-            var hour = document.getElementsByClassName("hour");
-
-            var logoContainer = document.getElementById("logoContainer");
-            var dropButton = document.getElementById("dropButton");
 
 
-            var montag = document.getElementById("montag");
-            var dienstag = document.getElementById("dienstag");
-            var mittwoch = document.getElementById("mittwoch");
-            var donnerstag = document.getElementById("donnerstag");
-            var freitag = document.getElementById("freitag");
-
-            montag.style.width = "100%";
-            montag.style.textAlign = "center";
-
-            logoContainer.parentNode.removeChild(logoContainer);
-            dropButton.style.width = "100%";
-
-            dienstag.parentNode.removeChild(dienstag);
-            mittwoch.parentNode.removeChild(mittwoch);
-            donnerstag.parentNode.removeChild(donnerstag);
-            freitag.parentNode.removeChild(freitag);
+    function clickHour2() {
+        var clickedHours = 0;
+        var clickedHour1;
+        var clickedHour2;
+        var hour = document.getElementsByClassName("hour");
 
 
+
+        for (var i = 0; i < hour.length; i++) {
+
+            hour[i].addEventListener("click", function () {
+                //Falls weiß dann ändere in grün
+                if (getComputedStyle(this).backgroundColor === "rgb(255, 255, 255)" && clickedHours < 2) {
+                    if(clickedHours == 0) {
+                        clickedHour1 = this;
+                    }
+                    if (clickedHours == 1) {
+                        clickedHour2 = this;
+                        //console.log(clickedHour2);
+                    }
+                    checkIfGrey(this);
+                    this.style.backgroundColor = "rgb(151, 192, 134)";
+                    clickedHours++;
+
+                    checkClickedHours();
+                    //console.log(clickedHours);
+
+                    //Falls grün dann ändere in weiß
+                } else if (getComputedStyle(this).backgroundColor === "rgb(151, 192, 134)"){
+                    this.style.backgroundColor = "rgb(255, 255, 255)";
+                    clickedHours--;
+                    //console.log(clickedHours);
+                }
+
+
+            });
         }
+
+        function checkClickedHours() {
+            if (clickedHours == 2) {
+                for (var i = 0; i < hour.length; i++) {
+                    if (getComputedStyle(hour[i]).backgroundColor == "rgb(151, 192, 134)") {
+                        if (getComputedStyle(hour[i+1]).backgroundColor == "rgb(255, 255, 255)") {
+                            hour[i+1].style.backgroundColor = "rgb(151, 192, 134)";
+                        } else if (getComputedStyle(hour[i+1]).backgroundColor == "rgb(151, 192, 134)") {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        //Prüfen ob ein graues Element dazwischen liegt
+            function checkIfGrey(item) {
+                var hourIndex1;
+                var hourIndex2;
+
+                //Erstes Element suchen
+                for (var i = 0; i < hour.length; i++) {
+                    if (getComputedStyle(hour[i]).backgroundColor == "rgb(151, 192, 134)") {
+                        hourIndex1 = i;
+                    }
+                }
+                
+                //Zweites Element suchen
+                for (var i = 0; i < hour.length; i++) {
+                    if (hour[i] === item) {
+                        hourIndex2 = i;
+                    }
+                }
+                
+                //Prüfen welcher Index höher ist
+                if (hourIndex1 < hourIndex2) {
+                    
+                } else if (hourIndex1 > hourIndex2) {
+                    
+                }
+                
+                function checkGrey(start, ende) {
+                    for (var i = start; i < ende) {
+
+                    }
+                }
+            }
+
+
+
     }
-    checkDevice();
+
 </script>
 
 </body>
