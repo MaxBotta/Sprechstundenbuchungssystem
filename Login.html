@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" >
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="TobraTheCobra.css">
+
+</head>
+<body>
+
+
+<form>
+
+
+    <div class="container">
+        <label><b>Username</b></label>
+        <input type="text"  name="uname" required>
+
+        <label><b>Password</b></label>
+        <input type="password"  name="psw" required>
+
+        <button type="submit" onclick="checkUser()">Login</button>
+
+    </div>
+
+
+</form>
+
+
+
+<script>
+    var mildenberger = {username:"mildenberger@hdm-stuttgart.de", passwort:"tobraistderboss"};
+    var student = {username:"ge007@hdm-stuttgart.de", passwort:"tobraistderboss"};
+    var users = [mildenberger, student];
+
+
+    function checkUser() {
+        var loggedIn = false;
+        for (i=0; i <users.length; i++){
+            if (users[i].username == document.getElementsByName("uname")[0].value){
+                if(users[i].passwort == document.getElementsByName("psw")[0].value){
+                    loggedIn=true;
+                    break;
+                }
+            }
+        }
+
+        window.alert(loggedIn);
+
+    }
+
+
+</script>
+</body>
+</html>
