@@ -16,15 +16,15 @@
 <div id="container" class="container">
     <div id="header" class="row">
         <!--<div id="dropButton" class="form-group">-->
-            <!--<select class="form-control dropButtonAuswahl" id="sel1">-->
-                <!--<option>Prof. Dr. Westbomke</option>-->
-                <!--<option>Prof. Dr. Eckert</option>-->
-                <!--<option>Prof. Dr. Thies</option>-->
-                <!--<option>Prof. Dr. Erich</option>-->
-            <!--</select>-->
+        <!--<select class="form-control dropButtonAuswahl" id="sel1">-->
+        <!--<option>Prof. Dr. Westbomke</option>-->
+        <!--<option>Prof. Dr. Eckert</option>-->
+        <!--<option>Prof. Dr. Thies</option>-->
+        <!--<option>Prof. Dr. Erich</option>-->
+        <!--</select>-->
         <!--</div>-->
         <div id="dropButton" class="dropdown">
-            <button  id="dropdownButton" class="btn dropdown-toggle" type="button" data-toggle="dropdown">Professoren
+            <button id="dropdownButton" class="btn dropdown-toggle" type="button" data-toggle="dropdown">Professoren
                 <span class="caret"></span></button>
             <ul class="dropdown-menu">
                 <li><a href="#">Prof. Dr. Eckert</a></li>
@@ -297,18 +297,18 @@
         </div>
     </div>
     <div id="bottomContainer" class="row">
-            <div id="back">
-                <span class="glyphicon glyphicon-triangle-left align-center" aria-hidden="true"></span>
-            </div>
-            <div id="acceptBtn">
-                <span class="glyphicon glyphicon-plus align-center" aria-hidden="true"></span>
-            </div>
-            <div id="cancelBtn" class="">
-                <span class="glyphicon glyphicon-minus align-center" aria-hidden="true"></span>
+        <div id="back">
+            <span class="glyphicon glyphicon-triangle-left align-center" aria-hidden="true"></span>
+        </div>
+        <div id="acceptBtn">
+            <span class="glyphicon glyphicon-plus align-center" aria-hidden="true"></span>
+        </div>
+        <div id="cancelBtn" class="">
+            <span class="glyphicon glyphicon-minus align-center" aria-hidden="true"></span>
 
-            </div>
         </div>
     </div>
+</div>
 </div>
 
 <script>
@@ -322,7 +322,6 @@
     //addHours("freitagContainer");
 
 
-
     function clickHour2() {
         var clickedHours = 0;
         var clickedHour1;
@@ -330,28 +329,33 @@
         var hour = document.getElementsByClassName("hour");
 
 
-
         for (var i = 0; i < hour.length; i++) {
 
             hour[i].addEventListener("click", function () {
                 //Falls weiß dann ändere in grün
                 if (getComputedStyle(this).backgroundColor === "rgb(255, 255, 255)" && clickedHours < 2) {
-                    if(clickedHours == 0) {
-                        clickedHour1 = this;
+//                    if(clickedHours == 0) {
+//                        clickedHour1 = this;
+//                    }
+//                    if (clickedHours == 1) {
+//                        clickedHour2 = this;
+//                        //console.log(clickedHour2);
+//                    }
+                    console.log(checkIfGrey(this));
+                    if (clickedHours == 0) {
+                        this.style.backgroundColor = "rgb(151, 192, 134)";
+                        clickedHours++;
+                    } else if (clickedHours == 1 && checkIfGrey(this) == false) {
+
+                        this.style.backgroundColor = "rgb(151, 192, 134)";
+                        clickedHours++;
                     }
-                    if (clickedHours == 1) {
-                        clickedHour2 = this;
-                        //console.log(clickedHour2);
-                    }
-                    checkIfGrey(this);
-                    this.style.backgroundColor = "rgb(151, 192, 134)";
-                    clickedHours++;
 
                     checkClickedHours();
                     //console.log(clickedHours);
 
                     //Falls grün dann ändere in weiß
-                } else if (getComputedStyle(this).backgroundColor === "rgb(151, 192, 134)"){
+                } else if (getComputedStyle(this).backgroundColor === "rgb(151, 192, 134)") {
                     this.style.backgroundColor = "rgb(255, 255, 255)";
                     clickedHours--;
                     //console.log(clickedHours);
@@ -365,9 +369,9 @@
             if (clickedHours == 2) {
                 for (var i = 0; i < hour.length; i++) {
                     if (getComputedStyle(hour[i]).backgroundColor == "rgb(151, 192, 134)") {
-                        if (getComputedStyle(hour[i+1]).backgroundColor == "rgb(255, 255, 255)") {
-                            hour[i+1].style.backgroundColor = "rgb(151, 192, 134)";
-                        } else if (getComputedStyle(hour[i+1]).backgroundColor == "rgb(151, 192, 134)") {
+                        if (getComputedStyle(hour[i + 1]).backgroundColor == "rgb(255, 255, 255)") {
+                            hour[i + 1].style.backgroundColor = "rgb(151, 192, 134)";
+                        } else if (getComputedStyle(hour[i + 1]).backgroundColor == "rgb(151, 192, 134)") {
                             break;
                         }
                     }
@@ -376,38 +380,50 @@
         }
 
         //Prüfen ob ein graues Element dazwischen liegt
-            function checkIfGrey(item) {
-                var hourIndex1;
-                var hourIndex2;
-
-                //Erstes Element suchen
-                for (var i = 0; i < hour.length; i++) {
-                    if (getComputedStyle(hour[i]).backgroundColor == "rgb(151, 192, 134)") {
-                        hourIndex1 = i;
-                    }
-                }
-                
-                //Zweites Element suchen
-                for (var i = 0; i < hour.length; i++) {
-                    if (hour[i] === item) {
-                        hourIndex2 = i;
-                    }
-                }
-                
-                //Prüfen welcher Index höher ist
-                if (hourIndex1 < hourIndex2) {
-                    
-                } else if (hourIndex1 > hourIndex2) {
-                    
-                }
-                
-                function checkGrey(start, ende) {
-                    for (var i = start; i < ende) {
-
-                    }
+        function checkIfGrey(item) {
+            var hourIndex1;
+            var hourIndex2;
+            var isGrey = false;
+            //Erstes Element suchen
+            for (var i = 0; i < hour.length; i++) {
+                if (getComputedStyle(hour[i]).backgroundColor == "rgb(151, 192, 134)") {
+                    hourIndex1 = i;
                 }
             }
 
+            //Zweites Element suchen
+            for (var i = 0; i < hour.length; i++) {
+                if (hour[i] === item) {
+                    hourIndex2 = i;
+                }
+            }
+            //console.log(hourIndex1);
+            //console.log(hourIndex2);
+
+            //Prüfen welcher Index höher ist
+            if (hourIndex1 < hourIndex2) {
+                checkGrey(hourIndex1, hourIndex2);
+                //console.log(isGrey);
+                return isGrey;
+
+            } else if (hourIndex1 > hourIndex2) {
+                checkGrey(hourIndex2, hourIndex1);
+                //console.log(isGrey);
+                return isGrey;
+
+            }
+
+            function checkGrey(start, ende) {
+                for (var i = start + 1; i <= ende - 1; i++) {
+                    //console.log(i);
+                    //console.log(ende-1);
+                    if (getComputedStyle(hour[i]).backgroundColor == "rgb(232, 236, 239)") {
+                        isGrey = true;
+                        break;
+                    }
+                }
+            }
+        }
 
 
     }
