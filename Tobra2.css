@@ -1,11 +1,10 @@
-.cont {
-    margin-left: 35%;
-    margin-right: 35%;
+
+.container {
+    padding: 0px 30%;
     margin-top: 10%;
 
 }
 .inner{
-    border-left: 3px solid red;
     margin: 20px;
 }
 
@@ -14,6 +13,28 @@
     margin-bottom: 100px;
 }
 
+.btn:focus,.btn:active {
+    outline: none !important;
+}
+
+.btn {
+    border-radius: 0%;
+    border: 0px;
+}
+.btn:hover{
+    border-left: 3px solid red;
+
+}
+
 button{
     position: relative;
+    outline: 0 none;
+}
+
+
+@media (max-width: 500px) {
+    .container {
+        margin: 0px;
+        padding: 5px;
+    }
 }

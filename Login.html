@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.css">
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!-- script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></--script> -->
 
     <link rel="stylesheet" href="TobraTheCobra.css">
 
@@ -15,45 +15,53 @@
 <body>
 
 
-<form>
+
 
 
     <div class="container">
-        <label><b>Username</b></label>
-        <input type="text"  name="uname" required>
 
-        <label><b>Password</b></label>
-        <input type="password"  name="psw" required>
+    <div class="rahmen">
+        <input id="uname" type="text" placeholder="Username" name="uname" required>
 
-        <button type="submit" onclick="checkUser()">Login</button>
+        <input id="psw" type="password" placeholder="Passwort" name="psw" required>
+
+        <button type="submit" id="ok" >Login</button>
+    </div>
 
     </div>
 
 
-</form>
 
 
 
 <script>
-    var mildenberger = {username:"mildenberger@hdm-stuttgart.de", passwort:"tobraistderboss"};
-    var student = {username:"ge007@hdm-stuttgart.de", passwort:"tobraistderboss"};
+    var mildenberger = {username: "mildenberger@hdm-stuttgart.de", passwort: "tobraistderboss"};
+    var student = {username: "ge007", passwort: "test"};
     var users = [mildenberger, student];
 
+    var uname = document.getElementById("uname");
+    var psw = document.getElementById("uname");
 
-    function checkUser() {
-        var loggedIn = false;
-        for (i=0; i <users.length; i++){
-            if (users[i].username == document.getElementsByName("uname")[0].value){
-                if(users[i].passwort == document.getElementsByName("psw")[0].value){
-                    loggedIn=true;
-                    break;
+    var ok = document.getElementById("ok");
+    ok.addEventListener("click", function () {
+
+        for (i = 0; i < users.length; i++) {
+            if (users[i].username === document.getElementById("uname").value) {
+                console.log(document.getElementById("uname").value);
+                if (users[i].passwort === document.getElementById("psw").value) {
+                    console.log(document.getElementById("psw").value);
+                    console.log("passt");
+                    window.location.href = "Startbuttons.html";
+
                 }
             }
         }
 
-        window.alert(loggedIn);
 
-    }
+    });
+
+
+
 
 
 </script>
