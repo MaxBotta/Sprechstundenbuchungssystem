@@ -1,0 +1,19 @@
+.cont {
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10%;
+
+}
+.inner{
+    border-left: 3px solid red;
+    margin: 20px;
+}
+
+#h{
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+
+button{
+    position: relative;
+}
