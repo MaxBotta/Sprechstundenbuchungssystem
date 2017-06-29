@@ -4,8 +4,36 @@
     margin-top: 10%;
 
 }
-.inner{
+.inner {
     margin: 20px;
+}
+
+.termin{
+    position: relative;
+
+    padding: 5px;
+    background-color: #e6e6e6;
+    border-left: 3px solid red;
+    margin: 0px 0px 30px;
+}
+
+
+
+img{
+    position: absolute;
+    top:5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    opacity: 0.5;
+}
+
+img:hover{
+    opacity: 1.0;
+}
+
+#eins{
+    margin-top: 25%;
 }
 
 #h{
