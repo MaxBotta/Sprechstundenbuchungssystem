@@ -14,8 +14,13 @@
     padding: 5px;
     background-color: #e6e6e6;
     border-left: 3px solid red;
-    margin: 0px 0px 30px;
+    margin: 0px 15px 30px;
 }
+
+.redline{
+    border-left: 3px solid red;
+}
+
 
 
 
@@ -30,6 +35,12 @@ img{
 
 img:hover{
     opacity: 1.0;
+}
+hr{
+    width: 1px;
+    height: 882px;
+    border-left: 3px solid red;
+    float: left;
 }
 
 #eins{
